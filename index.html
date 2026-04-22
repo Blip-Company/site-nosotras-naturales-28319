@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotras Naturales — Natural Solutions That Heal & Empower</title>
+  <meta name="description" content="Nosotras Naturales empowers women in Quito and across 100+ countries with natural supplements and essential oils — and a real income opportunity." />
+  <meta property="og:title" content="Nosotras Naturales — Natural Solutions That Heal & Empower" />
+  <meta property="og:description" content="Replace toxic everyday products with nature-based alternatives. Join a global business run by women, for women." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://source.unsplash.com/1200x630/?natural,wellness,woman,herbs" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --brand: #6d6e71;
+      --accent: #6f2c91;
+      --accent-light: color-mix(in srgb, #6f2c91 10%, white);
+      --brand-light: color-mix(in srgb, #6d6e71 10%, white);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #faf9f7;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: 'Playfair Display', serif;
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .revealed {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6f2c91 0%, #b06fd4 60%, #6d6e71 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--accent);
+      color: #fff;
+      padding: .75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: .95rem;
+      box-shadow: 0 4px 24px color-mix(in srgb, #6f2c91 35%, transparent);
+      transition: transform .2s ease, box-shadow .2s ease;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-primary:hover { transform: scale(1.03); box-shadow: 0 6px 32px color-mix(in srgb, #6f2c91 45%, transparent); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      color: #1a1a1a;
+      padding: .75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 500;
+      font-size: .95rem;
+      border: 1.5px solid #d1d5db;
+      transition: transform .2s ease, border-color .2s ease;
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-secondary:hover { transform: scale(1.02); border-color: var(--accent); }
+
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.05);
+      border: 1px solid #f0eeec;
+      transition: all .22s ease;
+    }
+    .card:hover { box-shadow: 0 8px 32px rgba(111,44,145,.12); transform: translateY(-2px); }
+
+    .hero-bg {
+      background: radial-gradient(ellipse at 70% 20%, color-mix(in srgb, #6f2c91 12%, transparent) 0%, transparent 60%),
+                  radial-gradient(ellipse at 10% 80%, color-mix(in srgb, #6d6e71 10%, transparent) 0%, transparent 55%),
+                  #faf9f7;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(111,44,145,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .section-eyebrow {
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: var(--accent);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .faq-details summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1a1a1a;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid #f0eeec;
+      transition: color .2s;
+    }
+    .faq-details summary::-webkit-details-marker { display: none; }
+    .faq-details summary:hover { color: var(--accent); }
+    .faq-details[open] summary { color: var(--accent); border-bottom-color: transparent; }
+    .faq-details .faq-body {
+      padding: .75rem 0 1.1rem;
+      font-size: .95rem;
+      line-height: 1.7;
+      color: #555;
+      border-bottom: 1px solid #f0eeec;
+      font-family: 'Inter', sans-serif;
+    }
+    .faq-chevron { transition: transform .25s ease; }
+    .faq-details[open] .faq-chevron { transform: rotate(180deg); }
+
+    .lang-switcher button {
+      padding: .3rem .65rem;
+      border-radius: 9999px;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all .18s ease;
+      font-family: 'Inter', sans-serif;
+      color: #555;
+      background: transparent;
+    }
+    .lang-switcher button[aria-pressed="true"] {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .lang-switcher button:hover:not([aria-pressed="true"]) {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .float-wa {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 50;
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 9999px;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.4);
+      transition: transform .2s ease;
+      text-decoration: none;
+    }
+    .float-wa:hover { transform: scale(1.1); }
+
+    .cta-band {
+      background: linear-gradient(135deg, #3b0e5e 0%, #6f2c91 50%, #9b4dbf 100%);
+    }
+
+    .icon-bubble {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .social-proof-tile {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem .9rem;
+      background: #fff;
+      border-radius: 9999px;
+      border: 1px solid #ece9f1;
+      font-size: .78rem;
+      font-weight: 500;
+      color: #444;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .floating-badge {
+      position: absolute;
+      background: #fff;
+      border-radius: 1rem;
+      padding: .6rem 1rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,.1);
+      border: 1px solid #f0eeec;
+      font-size: .78rem;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-cols { flex-direction: column; }
+      .hide-mobile { display: none !important; }
+    }
+  </style>
+
+  <!-- Schema.org LocalBusiness JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nosotras Naturales",
+    "description": "Empowering women with natural product solutions and an international business opportunity.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Quito",
+      "addressCountry": "EC"
+    },
+    "telephone": "+593984949487",
+    "url": "https://nosotrasnaturales.com",
+    "sameAs": ["https://www.instagram.com/nosotrasnaturales/"]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<nav class="sticky top-0 z-40 w-full" style="background: rgba(250,249,247,.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(240,238,236,.9);">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between" style="height:68px;">
+
+    <!-- Logo -->
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Nosotras Naturales home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="16" fill="#6f2c91" opacity=".12"/>
+        <path d="M16 6C16 6 10 10 10 17C10 20.866 12.686 24 16 24C19.314 24 22 20.866 22 17C22 10 16 6 16 6Z" fill="#6f2c91" opacity=".7"/>
+        <path d="M16 11C16 11 13 14 13 17C13 18.657 14.343 20 16 20C17.657 20 19 18.657 19 17C19 14 16 11 16 11Z" fill="#6f2c91"/>
+        <path d="M16 24V20" stroke="#6f2c91" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="font-display font-700 text-lg leading-tight tracking-tight" style="color:#1a1a1a;">
+        <span data-i18n-lang="en">Nosotras<br class="hidden"/><span class="text-xs font-normal" style="color:var(--brand);font-family:Inter,sans-serif;letter-spacing:.05em;"> Naturales</span></span>
+        <span data-i18n-lang="es">Nosotras<br class="hidden"/><span class="text-xs font-normal" style="color:var(--brand);font-family:Inter,sans-serif;letter-spacing:.05em;"> Naturales</span></span>
+        <span data-i18n-lang="it">Nosotras<br class="hidden"/><span class="text-xs font-normal" style="color:var(--brand);font-family:Inter,sans-serif;letter-spacing:.05em;"> Naturales</span></span>
+      </span>
+    </a>
+
+    <!-- Nav Links (hidden on mobile) -->
+    <div class="hidden md:flex items-center gap-7">
+      <a href="#about" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+        <span data-i18n-lang="en">About</span>
+        <span data-i18n-lang="es">Nosotras</span>
+        <span data-i18n-lang="it">Chi Siamo</span>
+      </a>
+      <a href="#products" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+        <span data-i18n-lang="en">Products</span>
+        <span data-i18n-lang="es">Productos</span>
+        <span data-i18n-lang="it">Prodotti</span>
+      </a>
+      <a href="#why" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+        <span data-i18n-lang="en">Why Us</span>
+        <span data-i18n-lang="es">Por qué</span>
+        <span data-i18n-lang="it">Perché Noi</span>
+      </a>
+      <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
+        <span data-i18n-lang="en">FAQ</span>
+        <span data-i18n-lang="es">Preguntas</span>
+        <span data-i18n-lang="it">Domande</span>
+      </a>
+    </div>
+
+    <!-- Right side: lang switcher + CTA -->
+    <div class="flex items-center gap-3">
+      <!-- Language Switcher -->
+      <div class="lang-switcher flex items-center gap-1 rounded-full px-1 py-1" style="background:rgba(240,238,236,.8); border:1px solid #e5e2df;">
+        <button type="button" data-lang-switch="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang-switch="es" aria-pressed="false">ES</button>
+        <button type="button" data-lang-switch="it" aria-pressed="false">IT</button>
+      </div>
+      <!-- CTA -->
+      <a href="https://wa.me/593984949487?text=Hi%2C%20I%20saw%20your%20site%20and%20I%27d%20like%20more%20information%20about%20Nosotras%20Naturales" class="btn-primary" style="padding:.55rem 1.1rem; font-size:.8rem;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.841L0 24l6.341-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 01-5.006-1.367l-.36-.213-3.763.888.936-3.66-.234-.375A9.818 9.818 0 012.182 12C2.182 6.576 6.576 2.182 12 2.182S21.818 6.576 21.818 12 17.424 21.818 12 21.818z"/></svg>
+        <span data-i18n-lang="en">Write to us</span>
+        <span data-i18n-lang="es">Escríbenos</span>
+        <span data-i18n-lang="it">Scrivici</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<header id="top" class="hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-28">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+      <!-- Left -->
+      <div class="flex-1 max-w-xl" data-reveal>
+        <!-- Pill badge -->
+        <div class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6" style="background:#fff; border:1px solid #ece9f1; box-shadow:0 2px 8px rgba(111,44,145,.08);">
+          <span style="width:7px;height:7px;border-radius:50%;background:#6f2c91;display:inline-block;"></span>
+          <span class="text-xs font-semibold tracking-wide" style="color:var(--accent); font-family:Inter,sans-serif;">
+            <span data-i18n-lang="en">Natural Wellness · Quito, Ecuador</span>
+            <span data-i18n-lang="es">Bienestar Natural · Quito, Ecuador</span>
+            <span data-i18n-lang="it">Benessere Naturale · Quito, Ecuador</span>
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-display font-800 tracking-tight leading-none mb-5" style="font-size:clamp(2.6rem,6vw,4.2rem); color:#1a1a1a;">
+          <span data-i18n-lang="en">
+            Nature heals.<br/>
+            <span class="gradient-text">You thrive.</span><br/>
+            Your business grows.
+          </span>
+          <span data-i18n-lang="es">
+            La naturaleza sana.<br/>
+            <span class="gradient-text">Tú floreces.</span><br/>
+            Tu negocio crece.
+          </span>
+          <span data-i18n-lang="it">
+            La natura guarisce.<br/>
+            <span class="gradient-text">Tu fiorisci.</span><br/>
+            Il tuo business cresce.
+          </span>
+        </h1>
+
+        <!-- Supporting line -->
+        <p class="text-base md:text-lg leading-relaxed mb-8" style="color:#555;">
+          <span data-i18n-lang="en">Replace the toxic products hiding in your home with science-backed natural alternatives — and build a real income doing it, from Quito to 100+ countries.</span>
+          <span data-i18n-lang="es">Reemplaza los productos tóxicos que tienes en casa con alternativas naturales respaldadas por la ciencia — y construye un ingreso real haciéndolo, desde Quito hasta más de 100 países.</span>
+          <span data-i18n-lang="it">Sostituisci i prodotti tossici nascosti nella tua casa con alternative naturali scientificamente provate — e costruisci un reddito reale facendolo, da Quito a oltre 100 paesi.</span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap items-center gap-3 mb-8">
+          <a href="https://wa.me/593984949487?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Nosotras%20Naturales" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.841L0 24l6.341-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.814 9.814 0 01-5.006-1.367l-.36-.213-3.763.888.936-3.66-.234-.375A9.818 9.818 0 012.182 12C2.182 6.576 6.576 2.182 12 2.182S21.818 6.576 21.818 12 17.424 21.818 12 21.818z"/></svg>
+            <span data-i18n-lang="en">Start today</span>
+            <span data-i18n-lang="es">Empieza hoy</span>
+            <span data-i18n-lang="it">Inizia oggi</span>
+          </a>
+          <a href="#products" class="btn-secondary">
+            <span data-i18n-lang="en">Explore products</span>
+            <span data-i18n-lang="es">Ver productos</span>
+            <span data-i18n-lang="it">Scopri i prodotti</span>
+          </a>
+        </div>
+
+        <!-- Social proof tiles -->
+        <div class="flex flex-wrap gap-2">
+          <div class="social-proof-tile">⭐ <span data-i18n-lang="en">4.9/5 · Real results</span><span data-i18n-lang="es">4.9/5 · Resultados reales</span><span data-i18n-lang="it">4.9/5 · Risultati reali</span></div>
+          <div class="social-proof-tile">🌍 <span data-i18n-lang="en">100+ countries</span><span data-i18n-lang="es">+100 países</span><span data-i18n-lang="it">+100 paesi</span></div>
+          <div class="social-proof-tile">🌿 <span data-i18n-lang="en">Since 2015</span><span data-i18n-lang="es">Desde 2015</span><span data-i18n-lang="it">Dal 2015</span></div>
+        </div>
+      </div>
+
+      <!-- Right: Hero image -->
+      <div class="flex-1 relative w-full max-w-lg lg:max-w-none" data-reveal>
+        <div class="rounded-3xl overflow-hidden ring-1 ring-slate-200 shadow-2xl" style="aspect-ratio:4/5;">
+          <img src="https://source.unsplash.com/720x900/?woman,natural,wellness,herbs,essential,oils" alt="A woman surrounded by natural products and essential oils" class="w-full h-full object-cover" loading="eager" />
+        </div>
+
+        <!-- Floating badge 1 -->
+        <div class="floating-badge" style="bottom: 1.5rem; left: -1.5rem; max-width:180px;">
+          <span style="font-size:1.1rem;">🌱</span>
+          <div>
+            <div style="font-weight:600; font-size:.78rem; color:#1a1a1a;">
+              <span data-i18n-lang="en">Zero toxins</span>
+              <span data-i18n-lang="es">Cero tóxicos</span>
+              <span data-i18n-lang="it">Zero tossine</span>
+            </div>
+            <div style="font-size:.68rem; color:#888;">
+              <span data-i18n-lang="en">100% natural</span>
+              <span data-i18n-lang="es">100% natural</span>
+              <span data-i18n-lang="it">100% naturale</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badge 2 -->
+        <div class="floating-badge" style="top: 1.5rem; right: -1.25rem; max-width:185px;">
+          <span style="font-size:1.1rem;">💜</span>
+          <div>
+            <div style="font-weight:600; font-size:.78rem; color:#1a1a1a;">
+              <span data-i18n-lang="en">We reply in 15 min</span>
+              <span data-i18n-lang="es">Respondemos en 15 min</span>
+              <span data-i18n-lang="it">Rispondiamo in 15 min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ LOGO CLOUD ═══════════════════════════ -->
+<section style="background:#fff; border-top:1px solid #f0eeec; border-bottom:1px solid #f0eeec;" class="py-10">
+  <div class="max-w-6xl mx-auto px-6 md:px-8 text-center" data-reveal>
+    <p class="section-eyebrow mb-6">
+      <span data-i18n-lang="en">Trusted by communities in</span>
+      <span data-i18n-lang="es">Con presencia en</span>
+      <span data-i18n-lang="it">Presente in</span>
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">Ecuador</span>
+      <span style="color:#e0ddd9;">·</span>
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">Colombia</span>
+      <span style="color:#e0ddd9;">·</span>
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">México</span>
+      <span style="color:#e0ddd9;">·</span>
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">España</span>
+      <span style="color:#e0ddd9;">·</span>
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">Italia</span>
+      <span style="color:#e0ddd9;">·</span>
+      <span style="font-family:Inter,sans-serif; font-size:.85rem; font-weight:600; color:#bbb; letter-spacing:.06em;">+95 <span data-i18n-lang="
